@@ -22,7 +22,7 @@ PROFILES = {
     },
     "monitor": {
         "type": "command",
-        "command": str(TOOLS_DIR / "claude-usage-monitor" / "statusline.cmd"),
+        "command": f"python {TOOLS_DIR / 'claude-usage-monitor' / 'statusline.py'}",
         "padding": 0,
     },
 }
