@@ -1,5 +1,5 @@
 diff --git a/statusline.py b/statusline.py
-index 82ac094..031cbc1 100644
+index 82ac094..f57c587 100644
 --- a/statusline.py
 +++ b/statusline.py
 @@ -32,7 +32,7 @@ SHOW_RESET = os.environ.get("CQB_RESET", "1") == "1"
@@ -92,7 +92,7 @@ index 82ac094..031cbc1 100644
  
  # Context size label
  if ctx_size >= 1_000_000:
-@@ -381,18 +404,21 @@ if proj_name:
+@@ -381,18 +404,22 @@ if proj_name:
          loc = loc[:39] + "\u2026"
      line1_parts.append(loc)
  
@@ -105,7 +105,8 @@ index 82ac094..031cbc1 100644
 +# Line 2: context gauge, quota
  ctx_color = color_pct(ctx_pct_used)
 -ctx_str = f"{ctx_color}{gauge}{N} {ctx_remaining}%"
-+ctx_str = f"{ctx_color}{gauge}{N} {ctx_display}%"
++ctx_tokens_used = in_tok + out_tok
++ctx_str = f"{ctx_color}{gauge}{N} {compact(ctx_tokens_used)}"
  if SHOW_CONTEXT_SIZE:
      ctx_str += f" of {ctx_label}"
  line2_parts = [ctx_str]
@@ -119,7 +120,7 @@ index 82ac094..031cbc1 100644
  
  # Quota
  usage = read_cached_usage()
-@@ -404,11 +430,11 @@ if usage:
+@@ -404,11 +431,11 @@ if usage:
  
      pace5 = pace_indicator(u5, r5, 300) if SHOW_PACE else ""
      pace7 = pace_indicator(u7, r7, 10080) if SHOW_PACE else ""
@@ -135,7 +136,7 @@ index 82ac094..031cbc1 100644
  
      # Extra usage (only show when 5h is nearly exhausted)
      if usage["extra_enabled"] and u5 is not None and int(u5) >= 80:
-@@ -427,10 +453,6 @@ else:
+@@ -427,10 +454,6 @@ else:
  if SHOW_COST and cost_usd > 0:
      line2_parts.append(f"{D}${cost_usd:.2f}{N}")
  
