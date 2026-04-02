@@ -13,6 +13,15 @@ Triage unsaved Notepad++ tabs. Reads backup files, cross-references against exis
 - Proposes save locations using existing directory structure
 - Waits for approval before saving anything
 
+### `/notebooklm`
+
+Create optimized NotebookLM notebooks and audio overviews for any topic. Handles the full pipeline: interviews the user, researches sources, curates the optimal source set, crafts a tailored audio overview prompt, and produces ready-to-use output files.
+
+- Researches and curates 3-5 high-quality sources per notebook
+- Produces intelligence briefs (compiled markdown) as the highest-leverage source type
+- Writes audio overview prompts with "skip the intro" and balance directives baked in
+- Outputs a setup file + intelligence brief, ready to paste into NotebookLM
+
 ### `/file`
 
 Open a file's containing folder in the system file manager with the file selected.
@@ -59,7 +68,8 @@ claude-tools/
 ├── plugin.json                  # Claude Code plugin manifest
 ├── skills/
 │   ├── cleanup-notepad/         # Notepad++ tab triage
-│   └── file/                    # Open file in system explorer
+│   ├── file/                    # Open file in system explorer
+│   └── notebooklm/              # NotebookLM notebook & audio overview builder
 ├── statuslines/
 │   ├── ben-custom.js            # Custom statusline (git-tracked)
 │   ├── claude-usage-monitor/    # Third-party quota monitor (gitignored)

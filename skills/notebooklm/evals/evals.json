@@ -1,0 +1,88 @@
+{
+  "skill_name": "notebooklm",
+  "evals": [
+    {
+      "id": 1,
+      "name": "interview-prep-spacex",
+      "prompt": "I have a technical interview at SpaceX for a propulsion test engineer role in two weeks. Help me create NotebookLM study materials so I can listen to audio overviews during my commute.",
+      "expected_output": "Should interview the user for details, research SpaceX propulsion testing sources, recommend multi-notebook architecture, produce .md output files with categorized sources, paste-ready URL blocks, and prescriptive audio prompts. Should recommend a listening sequence.",
+      "files": [],
+      "expectations": [
+        "Output .md file exists and is non-empty",
+        "Contains a Quick Copy URL block (fenced code block with URLs)",
+        "Contains an audio overview customization prompt with >50 words",
+        "Specifies a format recommendation (Deep Dive, Brief, Critique, or Debate)",
+        "Contains a categorized source library with tables",
+        "Quick Copy block contains real http/https URLs, not placeholders",
+        "Recommends multi-notebook architecture or addresses multiple distinct topics (company + technical)",
+        "Sources or prompt reference SpaceX-specific content (e.g., Raptor, Merlin, Starship, propulsion testing)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "learn-new-domain-mrna",
+      "prompt": "I want to deeply understand how mRNA vaccines work — the biology, the manufacturing process, and why they were such a breakthrough for COVID. Set up a NotebookLM notebook for me.",
+      "expected_output": "Should ask clarifying questions about knowledge level and depth desired, research high-quality sources (primary research, Wikipedia, explainers), produce a single notebook .md with curated sources and a Deep Dive prompt tuned for learning.",
+      "files": [],
+      "expectations": [
+        "Output .md file exists and is non-empty",
+        "Contains a Quick Copy URL block (fenced code block with URLs)",
+        "Contains an audio overview customization prompt with >50 words",
+        "Specifies a format recommendation (Deep Dive, Brief, Critique, or Debate)",
+        "Contains a categorized source library with tables",
+        "Quick Copy block contains real http/https URLs, not placeholders",
+        "Prompt or sources address both biology/science AND manufacturing/production",
+        "Framed for learning/education (not interview prep or critique)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "existing-sources-housing",
+      "prompt": "I've been collecting articles about the US housing market. Here are my URLs: https://www.nytimes.com/2024/housing-market-outlook, https://fred.stlouisfed.org/series/MSPUS, https://www.zillow.com/research/. I want a focused audio overview about whether now is a good time to buy. Can you help me set this up in NotebookLM?",
+      "expected_output": "Should acknowledge the user's existing sources, ask about their situation and knowledge level, flag that the NYT URL is likely paywalled, suggest supplementary sources, produce a .md with the user's URLs plus additions, and write a focused prompt about the buy-vs-wait decision.",
+      "files": [],
+      "expectations": [
+        "Output .md file exists and is non-empty",
+        "Contains a Quick Copy URL block (fenced code block with URLs)",
+        "Contains an audio overview customization prompt with >50 words",
+        "Specifies a format recommendation (Deep Dive, Brief, Critique, or Debate)",
+        "Contains a categorized source library with tables",
+        "Includes at least one of the user's provided URLs (fred.stlouisfed.org or zillow.com)",
+        "Flags the NYT URL as potentially paywalled or problematic",
+        "Adds supplementary sources beyond the three the user provided"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "vague-request-kubernetes",
+      "prompt": "I need to get up to speed on kubernetes for a project at work. Can you make me a notebooklm thing?",
+      "expected_output": "Should NOT charge ahead with research. Should ask clarifying questions: what aspect of k8s, what's the project, what's their current knowledge level, what role they play, whether they need operational knowledge vs architectural understanding, etc. Only after getting answers should it proceed to research and output.",
+      "files": [],
+      "expectations": [
+        "Output .md file exists and is non-empty",
+        "Contains a Quick Copy URL block (fenced code block with URLs)",
+        "Contains an audio overview customization prompt with >50 words",
+        "Specifies a format recommendation (Deep Dive, Brief, Critique, or Debate)",
+        "Contains a categorized source library with tables",
+        "Quick Copy block contains real http/https URLs, not placeholders",
+        "Shows evidence of interview/clarification phase (mentions assumed user context, knowledge level, or project details before diving into sources)",
+        "Sources are focused on practical/operational Kubernetes (not just conceptual overviews)"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "critique-own-work-proposal",
+      "prompt": "I wrote a 10-page proposal for migrating our monolith to microservices. Can you set up a NotebookLM Critique so I can hear where the arguments are weak?",
+      "expected_output": "Should recommend Critique format (not Deep Dive), ask the user for the proposal file, possibly suggest supplementary sources on microservices migration pitfalls, and produce a .md setup with Critique format selected and a prompt focused on evaluating argument strength and identifying gaps.",
+      "files": [],
+      "expectations": [
+        "Output .md file exists and is non-empty",
+        "Contains an audio overview customization prompt with >50 words",
+        "Recommends Critique format (not Deep Dive as default)",
+        "Mentions that the user needs to upload their proposal as a source",
+        "Suggests supplementary sources about microservices migration pitfalls or best practices",
+        "Prompt is oriented toward evaluating/critiquing the proposal rather than teaching microservices concepts"
+      ]
+    }
+  ]
+}
