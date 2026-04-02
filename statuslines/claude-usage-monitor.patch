@@ -1,5 +1,5 @@
 diff --git a/statusline.py b/statusline.py
-index 82ac094..a2a7687 100644
+index 82ac094..6a3c095 100644
 --- a/statusline.py
 +++ b/statusline.py
 @@ -32,7 +32,7 @@ SHOW_RESET = os.environ.get("CQB_RESET", "1") == "1"
@@ -51,7 +51,7 @@ index 82ac094..a2a7687 100644
 +        chars = []
 +        for i in range(width):
 +            if i == pace_pos:
-+                chars.append(f"{N}\u2022{c}")  # white bullet
++                chars.append(f"{N}\u25a0{c}")  # white ■ (same shape, different color)
 +            elif i < filled:
 +                chars.append("\u25a0")  # black square ■
 +            else:
